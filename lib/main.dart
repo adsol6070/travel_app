@@ -1,7 +1,12 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'routes/app_routes.dart';
 
-void main() => runApp(const TravelApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(TravelApp());
+}
 
 class TravelApp extends StatelessWidget {
   const TravelApp({super.key});
